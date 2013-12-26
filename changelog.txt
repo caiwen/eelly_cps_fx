@@ -1,0 +1,262 @@
+Version 2.2.1
+-------------
+	Release date: January 25, 2013
+	
+	Bug Fix
+	
+		- Fixed PHP syntax error in Go_cart.php library
+
+
+Version 2.2
+-------------
+	Release date: January 23, 2013
+
+	Features
+	
+		- Replaced experimental "GoEdit" with RedactorJS (RedactorJS is distributable with GoCart but NOT OPEN SOURCE http://imperavi.com/redactor/).
+		- Updated jQuery to 1.9 and jQuery UI to 1.10.
+		- Updated media manager to function with redactor.
+	
+	Bug Fixes
+	
+		- Fixed Issue #72 Missing data['error'] in admin Category. (thanks dronord)
+		- Fixed product image upload on firefox.
+		- Made CSS classes match other ones used through the system.
+		- Fixed Issue #75 compute tax for whole order coupon (thanks abulte)
+		- Fixed some language errors (thanks olimortimer)
+		
+	Other
+	
+		- Update to the GoCart license.
+		- Merged licenses from various parts of gocart into a single file "licences.txt"
+		- Related products come at the bottom of mobile devices now.
+		- Added instructional text to installation regarding the database.
+
+Version 2.1.1
+-------------
+	Release date: November 29 2012
+
+	Bug Fixes
+	
+		- Fixed installation redirect (only affected some servers)
+		- Added/Cleaned several instances of static text to the language files
+
+Version 2.1
+-------------
+	Release date: October 29, 2012
+	
+	Features
+
+		- Replaced single page checkout with multi page checkout for ease of development changes
+
+	Bug Fixes
+	
+		- Eliminated code remnant from product page.
+		- Fixed an error in the product view related to options with no option.
+		- Fixed migrations to not break on install.
+	
+	Other
+		
+		- Various changes to go_cart.php library to function better with multi-page checkout
+	
+Version 2.0
+-------------
+	Release date: September 13, 2012
+	
+	Features
+		
+		- Upgraded to CodeIgniter 2.1.2
+		- New default theme based on Twitter bootstrap 2.0
+		- Admin interface now based on twitter bootstrap
+		- Pagination on admin product list
+		- Category filter on admin product list page
+		- Admin Reports are better optimized than before.
+		- AJAX related products search on product_form.php view.
+		- AJAX category search on product_form.php view.
+		- Sortable products on front end (in the bootstrap theme)
+		- Breadcrumbs
+		- Routing system improved for optimum scalability
+		- New custom built wysiwyg editor (replaced TinyMCE) with CI based file manager
+		- Did a lot of file cleanup
+		- Supporting alternate thousands separator and decimal separators (via gocart config file)
+		- Supporting currency symbol on right or left (via gocart config file)
+		- XSS filtering on front end search
+		- Using CodeIgniter migrations library for DB updates
+	
+	Bug Fixes
+	
+		- Fixed blank search term error.
+		- Fixed admin order view error for is_gc flag.
+		- Removed default Lousiana tax of %4.
+		- Updated default uri-protocol to AUTO.
+		- Fixed colspan on an empty product table in the admin products view.
+		- Fixed admin banner datepicker javascript and fields
+		- Fixed banner_model.php to properly restrict disabled banners for the get_homepage_banners() function.
+		- Fixed meta tag code in the default theme header.
+		- Fixed login redirect for expired customer sessions (thanks Dinesh)
+		- Updated SQL install script to support ipv6 ip address length
+		- Eliminated a field from the install script for "heard_about" in the orders table
+
+	Other
+
+		- Eliminated many unused files and functions
+		- Utilizing address_format more places (and added a <br> flag)
+		
+
+Version 1.2.3
+-------------
+	Release date: March 8, 2012
+	
+	Bug Fixes
+	
+		- Fixed track_stock flag for gift cards and is_gc flag on products
+
+Version 1.2.2
+-------------
+	Release date: February 23, 2012
+	
+	Bug Fixes
+	
+		- Fixed errors resulting from gift card purchase, a casualty of the inventory tracking code
+		- My Account page was pulling user info from the session rather than database.
+		- Fixed product sorting on the front end.
+		- Fixed undefined index error if customer ID does not exist in the Digital Product model. (thanks svizion)
+
+	Other
+
+		- Replaced depreciated encrypt sha1 function with native PHP sha1 function.
+			
+Version 1.2.1
+------------
+	Release date : January 30, 2012
+
+	Bug Fixed
+
+		- Fixed digital products folder references
+		- Added track_stock to "get_cart_ready_product" function in Product_model
+		- Fixed updating quantity if allow overstock buying is enabled on the view cart page.
+		- fixed count_product which was stopping pagination on category pages.
+
+Version 1.2
+-------------
+	Release date: January 16, 2012
+	
+	Bug Fixes
+		
+		- Replaced deprecated function in the credit card helper and missing HTML tags in the main header view.
+		- Made admin and customer authentication use different cookie names to avoid conflicts.
+		- Fixed various HTML errors.
+		- Fixed height issues on "related products".
+		- Fixed PHP errors associated with no image available on related products.
+		- Support foreign characters in TinyMCE.
+		- Fixed the get_homepage_boxes function.
+		- Removed PHP warning when attempting to add a new product which does not have images. (thanks tfevens)
+		
+	Features
+		
+		- Added language support and extended internationalization capabilities.
+		- Added support for Sage Pay payment gateway (Thanks to swicks).
+		- Added support for digital products.
+		- Added inventory support.
+		- Converted payment and shipping libraries into application packages.
+		- Accented characters are now converted to their non-accented equivalents in Category, Page and Product slugs.
+		- Support themes through CodeIgniter packages. (configurable via gocart.php config file)
+		- One-click remove item from view cart page.
+		
+	Other
+		
+		- Updated to CodeIgniter 2.1.
+		- Removed database password and prefix requirements in the Installer, for those of you who want to shoot yourself in the feet.
+		- Eliminated some junk code and views that are not used.
+		- Added a check in the dashboard controller to check if there are payment and shipping modules installed.
+		- Extended default expiration for non-remembered sessions.
+		- Package jQuery & jQuery UI with GoCart for more end user control.
+
+Version 1.1.4
+-------------
+	Release date: November 8, 2011
+	
+	Bug Fixes
+		
+		- Added missing state from Mexico per Oliver (thanks!).
+		- Updated TinyMCE to support some foreign characters.
+		- Updated URL to TinyMCE init file (was causing TinyMCE to not display due to JS error)
+		- Updated rtrim to index.php for better support on windows.
+
+Version 1.1.3
+-------------
+	Release date: Nov 8, 2011
+	
+	Bug Fixes
+	
+		- This is the same bug fix from 1.1.1 for SSL. It wasn't properly fixed in 1.1.1
+
+Version 1.1.2
+-------------
+	Release date: Nov 7, 2011
+	
+	Bug Fixes
+		
+		- Fixed a bug in the order_model related to quantity and item reporting.
+
+Version 1.1.1
+-------------
+	Release date: Nov 7, 2011
+	
+	Bug Fixes
+		
+		- Fixed a bug in MY_url_helper that caused Force_SSL to Force SSL even if SSL isn't enabled.
+		- Fixed a MySQL strict mode bug where administrators do not have a default first and last name.
+		- Fixed a MySQL Strict Mode bug where UserData is not given a value.
+		
+Version 1.1
+------------
+	Release date: Nov 5, 2011
+	
+	Bug Fixes
+		
+		- Group percentage discounts were reversed.
+		- Coupons applied to individual items with percentage discounts were reversed.
+		- XML Order export was broken.
+		- XML Customer export was broken.
+		- Admin order notification system was broken.
+		- Location management was missing delete functions for Zones and Zone Areas.
+		- Order date search cut off the last date.
+		- Installation script added extra characters to the canned message for Gift Cards.
+		- Fixed a minor bug with HTML code being displayed in a forgot password email.
+	
+	Features
+	
+		- GoCart can now be installed in a sub-directory.
+		- Rewriting URLs is now optional at the time of installation.
+		- If GoCart isn't installed, the user is automatically redirected to the Install script.
+	
+	Other
+		
+		- Handling of secure pages is completely changed and is considerably easier now.
+		- Replaced the custom TinyMCE theme with the "o2k7 - silver" theme.
+		- Eliminated several unused views.
+		- Updated to TinyMCE 3.4.7
+		
+Version 1.0.2
+-------------
+	Release date: Nov 4, 2011
+
+	Bug Fixes
+		- Fixed the delete confirmation on the admin/pages.php view.
+
+Version 1.0.1
+-------------
+	Release date: Nov 3, 2011
+
+	Bug Fixes
+		
+		- Checklist type product options were broken.
+		- Fixed Various bugs relating to initial values in the database on a fresh install that resulted in errors in various places.
+		- Fixed missing array value for gift card "product" that was resulting in a key error on the view cart page.
+		- Fixed Product search page reference to a missing field.
+		- Updated the user group code, converted serialized field information to normal, added a default user group for customers.
+		
+	Features
+		
+		- Finished the ability for customers to set an address as default.
