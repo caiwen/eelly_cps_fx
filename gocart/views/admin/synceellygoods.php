@@ -11,8 +11,9 @@
 	<div class="bar" style="width: 0%;"></div>
 </div>
 <script type="text/javascript">
+<?php define('ADMIN_FOLDER', $this->config->item('admin_folder'));?>
 var dataPool=<?php echo $jsondata?>;
-var process=new processData(dataPool,'bar','badge','/admin/products/sync_eelly_goods');
+var process=new processData(dataPool,'bar','badge','<?php echo  site_url(ADMIN_FOLDER.'/products/sync_eelly_goods')?>');
 $(function() {
 	process.run();
 });

@@ -341,7 +341,7 @@ class Categories extends Admin_Controller {
         }
         $paramLen=$this->getParamsLen($requestParams);
         
-        $this->rest->http_header('Cookie', 'caiwendsdf');
+        $this->rest->http_header('Cookie', 'cpsfx');
         $this->rest->http_header('Content-Length', $paramLen);
         
         $getObject = $this->rest->post('api/mall_itemgoods/get.json',$requestParams);
@@ -418,7 +418,7 @@ class Categories extends Admin_Controller {
         $message=array('success'=>true,'msg'=>'','data'>'');
         try {
          $this->Routes_model->save($route);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $message['success']=false;
             $message['msg']=$e->getMessage();
         }
@@ -451,9 +451,8 @@ class Categories extends Admin_Controller {
 		$return=array();
 		$this->load->helper('pinyin');
 		$existcates=$this->db->get('categories')->result_array();
-		$existscateis=array_map(function($v){
-		    return (int)$v['id'];
-		}, $existcates);
+		function tmp_call($v){return (int)$v['id'];};
+		$existscateis=array_map("tmp_call", $existcates);
 		
 		foreach($rows as $k=>$v)
 		{
@@ -479,9 +478,8 @@ class Categories extends Admin_Controller {
 	private function filterGoods($rows)
 	{   
 	    $return=array();
-	    $searchGoodsId=array_map(function($v){
-	        return (int)$v['id'];
-	    }, $rows);
+	    function tmp_call($v){return (int)$v['id'];};
+	    $searchGoodsId=array_map("tmp_call", $rows);
 	    
 	      $searchGoodsId=array_unique($searchGoodsId);
 	    
@@ -489,9 +487,7 @@ class Categories extends Admin_Controller {
 	        ->where_in('id',$searchGoodsId)
 	        ->get()->result_array();
 	      
-	    $existsids=array_map(function($v){
-	        return (int)$v['id'];
-	    }, $products);
+	    $existsids=array_map("tmp_call", $products);
 	    
 	    foreach($rows as $k=>$v)
 	    {

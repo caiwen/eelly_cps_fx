@@ -500,7 +500,7 @@ class Products extends Admin_Controller {
 	    $message=array('success'=>true,'msg'=>'','data'>'');
 	    try {
 	      $this->Routes_model->save($route);
-	    }catch (\Exception $e){
+	    }catch (Exception $e){
 	        $message['success']=false;
 	        $message['msg']=$e->getMessage();
 	    }

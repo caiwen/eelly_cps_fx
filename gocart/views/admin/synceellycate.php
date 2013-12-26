@@ -11,8 +11,9 @@
 	<div class="bar" style="width: 0%;"></div>
 </div>
 <script type="text/javascript">
+<?php define('ADMIN_FOLDER', $this->config->item('admin_folder'));?>
 var dataPool=<?php echo $jsondata?>;
-	var process=new processData(dataPool,'bar','badge','/admin/categories/add_cate');
+	var process=new processData(dataPool,'bar','badge','<?php echo  site_url(ADMIN_FOLDER.'/categories/add_cate')?>');
 	$(function() {
 		process.run();
 	});

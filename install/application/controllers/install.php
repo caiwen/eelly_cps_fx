@@ -106,7 +106,7 @@ class Install extends CI_Controller {
 				//set up the webmaster_info
 				try {
 				$this->db->insert($this->input->post('prefix').'webmaster_info',array('admin_id'=>$lastInsetId,'webmaster_id'=>$this->input->post('webmaster_id'),'webmaster_mail'=>$this->input->post('webmaster_mail')));
-				}catch (\Exception $e) {
+				}catch (Exception $e) {
 					throw $e;
 				}
 				//setup the database config file
