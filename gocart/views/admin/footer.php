@@ -1,6 +1,6 @@
 	<hr/>
 	<footer>
-		<div style="text-align:center;">Powed by Eelly Cps</div>
+		<div style="text-align:center;">Powered by Eelly Cps</div>
 	</footer>
 </div>
 
