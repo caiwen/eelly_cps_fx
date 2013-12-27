@@ -15,12 +15,12 @@
 		
 		<?php if(!$config_writable):?>
 			<div class="alert alert-error">
-				<p> <?php echo $relative_path?> 文件夹不可写！ 生产配置文件时这是必要的</p>
+				<p> <?php echo $relative_path?> 文件夹不可写！ 生成配置文件时这是必要的</p>
 			</div>
 		<?php endif;?>
 		<?php if(!$root_writable):?>
 			<div class="alert alert-error">
-				<p>根目录文件夹不可写！如果你想从URL杜绝“index.php”中通过生成。htaccess文件中这是必需的。</p>
+				<p>根目录文件夹不可写！如果你想通过生成htaccess文件从URL杜绝“index.php” 这是必要的。</p>
 			</div>
 		<?php endif;?>
 		<?php if($errors):?>
