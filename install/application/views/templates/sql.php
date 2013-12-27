@@ -388,7 +388,7 @@ CREATE TABLE `prefix_products` (
 `route_id` int(11) NOT NULL,
 `description` text,
 `click_url` varchar(2083) NOT NULL,
-`eelly_thumb_img` varchar(255) NOT NULL,
+`eelly_thumb_img` varchar(2083) NOT NULL,
 `excerpt` text,
 `price` float(10,2) NOT NULL default '0.00',
 `saleprice` float(10,2) NOT NULL default '0.00',
