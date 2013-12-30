@@ -329,9 +329,10 @@ class Categories extends Admin_Controller {
         $this->rest->initialize(array('server' => $this->config->item('cps_service_domain')));
         $parent_id=(int)$this->Category_model->get_category($id)->parent_id;
         $cate_name=$this->Category_model->get_category($id)->name;
+        $max_id=$this->getMaxGoodsId($id);
         $requestParams=array(
             'limit'=>110,
-            'sp' =>!empty($sp) ? $sp : 100
+            'sp' =>!empty($sp) ? $sp : ($max_id > 0 ? $max_id : 1)
         );
         if($parent_id>0) {
             $requestParams['cate1']=$parent_id;
@@ -358,6 +359,8 @@ class Categories extends Admin_Controller {
         $jsondata=json_encode($getArray);
         $data['jsondata']=$jsondata;
         $data['catename']=$cate_name;
+        $data['cateid']=$id;
+        $data['max_goods_id']=$max_id;
         $this->load->view($this->config->item('admin_folder').'/synceellygoods',$data);
     }
     
@@ -511,5 +514,12 @@ class Categories extends Admin_Controller {
 		}
 		$leng+=2*count($params)-1;
 		return $leng;
+	}
+	private function getMaxGoodsId($id)
+	{
+	    $result=$this->db->select_max('product_id')
+	           ->where('category_id',$id)
+	            ->get('category_products')->result_array();
+	    return (int)$result[0]['product_id'];
 	}
 }

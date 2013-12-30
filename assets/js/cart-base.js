@@ -104,6 +104,9 @@ processData.prototype={
 	run:function(){
 		var _this=this;
 		this.timer = setInterval(function(){_this.task()}, 500);
+	},
+	stop:function(){
+		clearInterval(this.timer);
 	}
 		
 }
