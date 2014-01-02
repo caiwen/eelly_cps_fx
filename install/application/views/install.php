@@ -55,8 +55,7 @@
 				
 			</fieldset>
 			<fieldset>
-			   <legend>站长信息</legend>
-			   
+			   <legend>联盟站长信息</legend>
 			   <label>站长邮箱</label><?php echo form_input(array('class'=>'span8', 'name'=>'webmaster_mail', 'value'=>set_value('webmaster_mail') ));?>
 			   <p class="alert alert-info">衣联联盟(http://cps.eelly.com)登录用户名</p>
 			   <label>站长ID</label><?php echo form_input(array('class'=>'span8', 'name'=>'webmaster_id', 'value'=>set_value('webmaster_id') ));?>
@@ -65,13 +64,7 @@
 			
 			<fieldset>
 				<legend>附加信息</legend>
-				
-				<label for="company_name">公司名字</label> <?php echo form_input(array('class'=>'span8', 'name'=>'company_name', 'value'=>set_value('company_name') ));?>
-				<label for="website_email">网站邮箱</label> <?php echo form_input(array('class'=>'span8', 'name'=>'website_email', 'value'=>set_value('website_email') ));?>
-				<label class="checkbox">
-					<?php echo form_checkbox('ssl_support', '1', (bool)set_value('ssl_support') );?> SSL 支持
-				</label>
-				
+				<label for="company_name">网站名字</label> <?php echo form_input(array('class'=>'span8', 'name'=>'company_name', 'value'=>set_value('company_name') ));?>
 				<label class="checkbox">
 					<?php echo form_checkbox('mod_rewrite', '1', (bool)set_value('mod_rewrite') );?> 从URL中移除“的index.php” <small>(需要Apache与mod_rewrite)</small>
 				</label>

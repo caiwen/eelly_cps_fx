@@ -46,8 +46,6 @@ class Install extends CI_Controller {
 		$this->form_validation->set_rules('admin_password', lang('admin_password'), 'required|min_length[5]');
 		
 		$this->form_validation->set_rules('company_name', lang('company_name'), 'required');
-		$this->form_validation->set_rules('website_email', lang('website_email'), 'required|valid_email');
-		$this->form_validation->set_rules('ssl_support');
 		$this->form_validation->set_rules('mod_rewrite');
 		
 		$this->form_validation->set_rules('webmaster_mail', lang('webmaster_mail'), 'required|valid_email');
