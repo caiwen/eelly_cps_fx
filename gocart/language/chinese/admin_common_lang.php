@@ -19,6 +19,7 @@ $lang['common_digital_products']	= '数字产品';
 $lang['common_content']				= '页面内容设置';
 $lang['common_banners']				= '横幅广告';
 $lang['common_boxes']				= '区块';
+$lang['common_themes']				= '主题';
 $lang['common_pages']				= '文章页';
 $lang['common_administrative']		= '管理';
 $lang['common_settings']			= '设置';

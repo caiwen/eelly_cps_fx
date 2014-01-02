@@ -101,6 +101,7 @@ $(document).ready(function(){
 							<li><a href="<?php echo $admin_url;?>banners"><?php echo lang('common_banners') ?></a></li>
 							<li><a href="<?php echo $admin_url;?>boxes"><?php echo lang('common_boxes') ?></a></li>
 							<li><a href="<?php echo $admin_url;?>pages"><?php echo lang('common_pages') ?></a></li>
+							<li><a href="<?php echo $admin_url;?>theme"><?php echo lang('common_themes') ?></a></li>
 						</ul>
 					</li>
 					<?php endif; ?>

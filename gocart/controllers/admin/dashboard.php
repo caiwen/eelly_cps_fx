@@ -22,7 +22,7 @@ class Dashboard extends Admin_Controller {
 	function index()
 	{
 		//check to see if shipping and payment modules are installed
-		$data['payment_module_installed']	= (bool)count($this->Settings_model->get_settings('payment_modules'));
+		/* $data['payment_module_installed']	= (bool)count($this->Settings_model->get_settings('payment_modules'));
 		$data['shipping_module_installed']	= (bool)count($this->Settings_model->get_settings('shipping_modules'));
 		
 		$data['page_title']	=  lang('dashboard');
@@ -34,7 +34,9 @@ class Dashboard extends Admin_Controller {
 		$data['customers'] = $this->Customer_model->get_customers(5);
 				
 		
-		$this->load->view($this->config->item('admin_folder').'/dashboard', $data);
+		$this->load->view($this->config->item('admin_folder').'/dashboard', $data); */
+	    $user=$this->current_admin;
+	    $this->load->view($this->config->item('admin_folder').'/personalinfo', $user);
 	}
 	
 	function personalinfo()

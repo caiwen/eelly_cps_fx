@@ -21,4 +21,4 @@ $lang['banner_form']			= '添加新的轮播广告';
 $lang['message_delete_banner']	= '广告已经被删除';
 $lang['sort']					= '排序';
 $lang['sort_banners']			= '拖放行可对广告排序';
-$lang['img_size_advise']        ="建议轮播广告图的尺寸为1200px*400px";
+$lang['img_size_advise']        ="建议轮播广告图的尺寸为628px*300px";

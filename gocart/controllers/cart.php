@@ -12,9 +12,17 @@ class Cart extends Front_Controller {
 
 	function index()
 	{
-		$this->load->model(array('Banner_model', 'box_model'));
+		$this->load->model(array('Banner_model', 'box_model','product_model'));
 		$this->load->helper('directory');
-
+		$base_url	= $this->uri->segment_array();
+		
+        $data['nvzlist']=$this->Product_model->get_products(289,6,1,'sequence');
+        $data['nzlist']=$this->Product_model->get_products(292,6,1,'sequence');
+        $data['tzlist']=$this->Product_model->get_products(293,6,1,'sequence');
+        $data['xmlist']=$this->Product_model->get_products(343,6,1,'sequence');
+        
+        
+        $data['base_url']	= $base_url;
 		$data['gift_cards_enabled'] = $this->gift_cards_enabled;
 		$data['banners']			= $this->Banner_model->get_homepage_banners(5);
 		$data['boxes']				= $this->box_model->get_homepage_boxes(8);
@@ -155,6 +163,7 @@ class Cart extends Front_Controller {
 	{
 		//get the category
 		$data['category']			= $this->Category_model->get_category($id);
+		$data['cate_id']            =$id;
 				
 		if (!$data['category'])
 		{
