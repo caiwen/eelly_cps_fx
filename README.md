@@ -29,9 +29,8 @@ server
                 include fcgi.conf;
         }
 }
-
-##Apache
-1,支持rewrite_mod
-2,支持curl
-
 ```
+##Apache
+1.  支持rewrite_mod
+2.  支持curl
+
