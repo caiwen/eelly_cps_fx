@@ -175,6 +175,7 @@ class Products extends Admin_Controller {
 		{	
 			// get the existing file associations and create a format we can read from the form to set the checkboxes
 			$pr_files 		= $this->Digital_Product_model->get_associations_by_product($id);
+			$this->load->helper('string');
 			foreach($pr_files as $f)
 			{
 				$data['product_files'][]  = $f->file_id;
@@ -201,7 +202,7 @@ class Products extends Admin_Controller {
 			$data['seo_title']			= $product->seo_title;
 			$data['meta']				= $product->meta;
 			$data['slug']				= $product->slug;
-			$data['description']		= $product->description;
+			$data['description']		= correction($product->description);
 			$data['excerpt']			= $product->excerpt;
 			$data['price']				= $product->price;
 			$data['saleprice']			= $product->saleprice;

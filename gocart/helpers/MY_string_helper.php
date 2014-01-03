@@ -56,3 +56,12 @@ function generate_code($length=16)
 	}
 	return $password;
 }
+
+//替换商品描述下www.eelly.com的图片到img.eelly.com
+function correction($out)
+{
+    $out = preg_replace('/http:\/\/(\w+)\.eelly\.com\/data\/files\//','http://img.eelly.com/data/files/',$out);
+    $out = str_replace('http://img.eelly.com/http', 'http', $out);
+    $out = str_replace('http://www.eelly.com/http', 'http', $out);
+    return $out;
+}

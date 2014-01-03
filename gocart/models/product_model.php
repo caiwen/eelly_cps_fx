@@ -152,6 +152,7 @@ Class Product_model extends CI_Model
 	function get_product($id, $related=true)
 	{
 		$result	= $this->db->get_where('products', array('id'=>$id))->row();
+		$this->load->helper('string');
 		if(!$result)
 		{
 			return false;
@@ -183,6 +184,7 @@ Class Product_model extends CI_Model
 			$result->related_products	= array();
 		}
 		$result->categories			= $this->get_product_categories($result->id);
+		$result->description       =correction($result->description);
 	
 		// group discount?
 		if($this->group_discount_formula) 
